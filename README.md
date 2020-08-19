@@ -14,13 +14,6 @@ The client side code that runs on the Raspberry Pi can be found [here](https://g
 * Once the training is done, it sends a notification message to the MQTT channel the clients (RPis) are subscribed to.
 * The RPi clients will download the updated training file with the new face information and reload themselves.
 
-# attendance-app-server
-
-This code meant to be run on a Debian Linux server with OpenCV 4.1.2 + OpenCV Contrib installed.
-Also python3 with numpy and all necessary libraries.
-
-This part is listening for uploaded files from mobile phones. After new images were uploaded, it will start an OpenCV face training to create a trainer file with learnt face data. After training file is done, it will send an MQTT message to be received by the Pi. This is the notification that tells the Pi that a new trainer file is available and ready to download.
-
 ## How to run:
 
 ```$ python3 imagesWatcher.py [folderToWatch]```<br>
